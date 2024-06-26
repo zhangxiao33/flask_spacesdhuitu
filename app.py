@@ -56,7 +56,7 @@ def generate_image_cf():
         f.write(response_data)
 
     # 构造返回给前端的数据
-    img_url = f'https://mistpe-flask-spacesdhuitu.hf.space/static/{img_filename}'
+    img_url = f'https://flask-egdq.onrender.com/static/{img_filename}'
     result = {
         "created": int(time.time()),
         "data": [
@@ -140,14 +140,14 @@ def generate_3d_surface():
     fig.write_html(f'static/{html_filename}')
 
     # 构建 HTML 文件的 URL
-    html_url = f'https://mistpe-flask-space-3djiaohu2.hf.space/static/{html_filename}'
+    html_url = f'https://flask-egdq.onrender.com/static/{html_filename}'
 
     # 保存 fig 对象为图像文件
     img_filename = f'3d_surface_plot_{int(time.time())}.png'
     fig.write_image(f'static/{img_filename}')
 
     # 构建图像文件的 URL
-    img_url = f'https://mistpe-flask-space-3djiaohu2.hf.space/static/{img_filename}'
+    img_url = f'https://flask-egdq.onrender.com/static/{img_filename}'
 
     # 返回 JSON 格式的响应, 包含 HTML 和图像的访问链接
     return jsonify({
@@ -187,7 +187,7 @@ def generate_3d_sphere():
         f.write(buf.getvalue())
 
     # 返回 JSON 格式的响应,包含图像的访问链接
-    img_url = f'https://mistpe-flask-space.hf.space/static/{img_filename}'
+    img_url = f'https://flask-egdq.onrender.com/static/{img_filename}'
     return {
         "created": int(time.time()),
         "data": [
