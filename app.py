@@ -196,7 +196,11 @@ def generate_3d_sphere():
             }
         ]
     }
-
+    
+@app.route('/', methods=['POST'])
+def health_check():
+    return jsonify({'status': 'OK'}), 200
+    
 if __name__ == '__main__':
     # 确保 static 目录存在
     if not os.path.exists('static'):
